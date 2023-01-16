@@ -11,12 +11,6 @@ st.subheader('.............................I^m here to serve you................
 
 st.subheader('To keep the service active make a small donation with PayPal.. Thank you')
 st.success('gianfranco.fa@gmail.com')
-#openai.api_key = os.getenv("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")
-#os.environ["OPENAI_API_KEY"] = "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"
-#openai.api_key = os.environ["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"]
-#openai.api_key=st.secrets['OPEN_APY_KEY']
-#openai.api_key = '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'#
-#model_engine ="text-davinci-003"#text-curie-001"# "text-davinci-003"
 
 st.subheader('For use and explanation models read this:')
 st.success('https://beta.openai.com/docs/models/overview')
@@ -39,17 +33,14 @@ openai.api_key=st.secrets['OPEN_APY_KEY']
 
     
 prompt =st.text_area('YOUR REQUEST:')
-#if prompt is not None:
+
 completions = openai.Completion.create(engine=model_engine,prompt=prompt,max_tokens=1024,n=1, stop=None,
                                       frequency_penalty=0.0,temperature=0.0,)#top_p=1
-#message =(completions.choices[0].text)#
-#st.write(message)
+
 if st.button('RUN'):
     message =(completions.choices[0].text)#
     st.write(message)
-#else:
-    #st.write('inserisci la richiesta')
-#text_contents = (message)
+
 st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 
 

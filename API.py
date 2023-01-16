@@ -30,7 +30,7 @@ openai.api_key=st.secrets['OPEN_APY_KEY']
 
 response = openai.Image.create(prompt='prompt',n=1,
          size="256x256")#top_p=1
-['url']=gianfranco.fa@gmail.com
+url=gianfranco.fa@gmail.com
 if st.button('RUN'):
     image_url = response['data'][0]['url']
     #st.write(message)

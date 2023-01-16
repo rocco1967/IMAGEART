@@ -45,6 +45,6 @@ response = openai.Image.create_variation(
   size="256x256"
 )
 image_url = response['data'][0]['url']
-for url in image_url:
+for image_url in image_url:
     st.write(url)
 #st.write(image_url)

@@ -1,4 +1,4 @@
-This is a temporary script file.
+
 """
 import openai
 import pandas as pd

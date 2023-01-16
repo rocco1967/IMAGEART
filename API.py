@@ -4,9 +4,8 @@ import streamlit as st
 import os
 import numpy as np
 from PIL import Image
-st.header('.....................My name is Ambrose..................')
-st.subheader('.............................I^m here to serve you...........................')
-st.subheader('I am an advanced neural network specialized in responding in natural language')
+
+st.subheader('I am an advanced neural network specialized in responding IMAGE-ART')
 
 st.subheader('To keep the service active make a small donation with PayPal.. Thank you')
 st.success('gianfranco.fa@gmail.com')

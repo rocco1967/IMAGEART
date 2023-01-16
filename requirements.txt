@@ -1,0 +1,12 @@
+Pillow
+numpy
+pandas
+streamlit
+openai==0.25.0
+
+py-espeak-ng
+
+audio-recorder-streamlit
+SpeechRecognition
+
+ffmpeg-python

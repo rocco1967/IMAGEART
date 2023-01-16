@@ -16,15 +16,9 @@ st.success('https://beta.openai.com/docs/models/overview')
 st.subheader('text-davinci-003.......IS THE ENGINE OF CHATGPT')
 
 
-model_engine = st.radio(
-    "CHOOSE THE MODEL OF A.I.",
-    ('None','text-ada-001','text-davinci-002', 'text-davinci-003', 'code-davinci-002','code-cushman-001','text-curie-001'))
+
 ##########################################################
-#name = st.text_input('Name')
-if model_engine=='None' :
-  st.warning('CHOSE A MODEL')
-  st.stop()
-st.success('Thank you for chose a Model')
+
 ###########################################################
 
 openai.api_key=st.secrets['OPEN_APY_KEY']
@@ -33,12 +27,12 @@ openai.api_key=st.secrets['OPEN_APY_KEY']
     
 prompt =st.text_area('YOUR REQUEST:')
 
-completions = openai.Completion.create(engine=model_engine,prompt=prompt,max_tokens=1024,n=1, stop=None,
-                                      frequency_penalty=0.0,temperature=0.0,)#top_p=1
+response = openai.Image.create(prompt=prompt,n=1,
+         size="256x256")#top_p=1
 
 if st.button('RUN'):
-    message =(completions.choices[0].text)#
-    st.write(message)
+    image_url = response['data'][0]['url']
+    #st.write(message)
 
-st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
+#st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 

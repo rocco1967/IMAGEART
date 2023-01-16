@@ -39,7 +39,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 ###########################################################################################################################
 
-response = openai.Image.create_variation(
+#response = openai.Image.create_variation(
   image=open("Cattura.PNG", "rb"),
   n=1,
   size="256x256"

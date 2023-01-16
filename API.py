@@ -16,27 +16,32 @@ st.success('https://beta.openai.com/docs/models/overview')
 
 
 
-##########################################################
 
-###########################################################
 
 #openai.api_key=st.secrets['OPEN_APY_KEY']
-
+#####################################################################################################
 
     
-prompt =st.text_area('YOUR REQUEST:','''None''')
-if prompt=='None' :
-  st.warning('YOUR REQUEST PLEASE')
-  st.stop()
-st.success('Thank your request ')
-openai.api_key=st.secrets['OPEN_APY_KEY']
+#prompt =st.text_area('YOUR REQUEST:','''None''')
+#if prompt=='None' :
+  #st.warning('YOUR REQUEST PLEASE')
+  #st.stop()
+#st.success('Thank your request ')
+#openai.api_key=st.secrets['OPEN_APY_KEY']
 
-response = openai.Image.create(prompt=prompt,n=1,
-         size="256x256")#top_p=1
+#response = openai.Image.create(prompt=prompt,n=1,
+         #size="256x256")#top_p=1
 #url='gianfranco.fa@gmail.com'
-if st.button('RUN'):
-    image_url = response['data'][0]['url']
-    st.write(image_url)
+#if st.button('RUN'):
+    #image_url = response['data'][0]['url']
+    #st.write(image_url)
 
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
+###########################################################################################################################
 
+response = openai.Image.create_variation(
+  image=open("Cattura.png", "rb"),
+  n=1,
+  size="256x256"
+)
+image_url = response['data'][0]['url']

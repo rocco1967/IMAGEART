@@ -24,7 +24,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 
 
     
-prompt =st.text_area('YOUR REQUEST:')
+prompt =st.text_area('YOUR REQUEST:','''None''')
 if prompt=='None' :
   st.warning('YOUR REQUEST PLEASE')
   st.stop()

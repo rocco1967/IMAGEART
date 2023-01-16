@@ -28,7 +28,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 prompt =st.text_area('YOUR REQUEST:')
 openai.api_key=st.secrets['OPEN_APY_KEY']
 
-response = openai.Image.create(prompt='prompt',n=1,
+response = openai.Image.create(prompt=prompt,n=1,
          size="256x256")#top_p=1
 #url='gianfranco.fa@gmail.com'
 if st.button('RUN'):

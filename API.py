@@ -21,11 +21,12 @@ st.subheader('text-davinci-003.......IS THE ENGINE OF CHATGPT')
 
 ###########################################################
 
-openai.api_key=st.secrets['OPEN_APY_KEY']
+#openai.api_key=st.secrets['OPEN_APY_KEY']
 
 
     
 prompt =st.text_area('YOUR REQUEST:')
+openai.api_key=st.secrets['OPEN_APY_KEY']
 
 response = openai.Image.create(prompt=prompt,n=1,
          size="256x256")#top_p=1

@@ -26,6 +26,10 @@ st.success('https://beta.openai.com/docs/models/overview')
 
     
 prompt =st.text_area('YOUR REQUEST:')
+if prompt=='None' :
+  st.warning('YOUR REQUEST PLEASE')
+  st.stop()
+st.success('Thank your request ')
 openai.api_key=st.secrets['OPEN_APY_KEY']
 
 response = openai.Image.create(prompt=prompt,n=1,

@@ -8,10 +8,7 @@ import numpy as np
 from PIL import Image
 st.header('.....................My name is Ambrose..................')
 st.subheader('.............................I^m here to serve you...........................')
-st.subheader('I am an advanced neural network specialized in responding in natural language')
-image=Image.open('concierge.JPG')#('sfera.JPG')
-image = image.resize((1000, 400))
-st.image(image)
+
 st.subheader('To keep the service active make a small donation with PayPal.. Thank you')
 st.success('gianfranco.fa@gmail.com')
 #openai.api_key = os.getenv("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")

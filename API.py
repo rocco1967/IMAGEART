@@ -41,7 +41,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 
 response = openai.Image.create_variation(
   image=open("Cattura.PNG", "rb"),
-  n=1,
+  n=3,
   size="256x256"
 )
 image_url = response['data'][0]['url']

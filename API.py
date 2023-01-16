@@ -40,7 +40,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 ###########################################################################################################################
 
 response = openai.Image.create_variation(
-  image=open("Cattura.png", "rb"),
+  image=open("Cattura.PNG", "rb"),
   n=1,
   size="256x256"
 )

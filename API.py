@@ -46,5 +46,5 @@ response = openai.Image.create_variation(
 )
 image_url = response['data'][0]['url']
 for image_url in image_url:
-    st.write(url)
+    st.write(image_url)
 #st.write(image_url)

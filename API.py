@@ -47,9 +47,9 @@ with open(os.path.join("/tmp", image.name), "wb") as f:
     f.write(bytes_data)  # write this content elsewhere
 with open(os.path.join("/tmp",a),"rb") as r:
     #st.audio(r, format='audio/wav')
-    r.read(r)
+    r=b
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(prompt=a, n=1, size="256x256")
+response = openai.Image.create_variation(prompt=b, n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

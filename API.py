@@ -38,18 +38,11 @@ st.success('https://beta.openai.com/docs/models/overview')
 
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 ###########################################################################################################################
-image=st.file_uploader("Choose a file_csv")
+#image=st.file_uploader("Choose a file_csv")
 #prompt=st.image(image,output_format='PNG')
-bytes_data = image.read()  # read the content of the file in binary
-a=image.name
-#st.write(files.name)#, bytes_data)
-with open(os.path.join("/tmp", image.name), "wb") as f:
-    f.write(bytes_data)  # write this content elsewhere
-with open(os.path.join("/tmp",a),"rb") as r:
-    #st.audio(r, format='audio/wav')
-    r.write()
+
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(prompt=r, n=1, size="256x256")
+response = openai.Image.create_variation(prompt=st.fileuploader('chose a file), n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

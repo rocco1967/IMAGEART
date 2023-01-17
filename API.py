@@ -41,7 +41,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 image=st.file_uploader("Choose a file_csv")
 #prompt=st.image(image,output_format='PNG')
 bytes_data = image.read()  # read the content of the file in binary
-a=files.name
+a=image.name
 #st.write(files.name)#, bytes_data)
 with open(os.path.join("/tmp", files.name), "wb") as f:
     f.write(bytes_data)  # write this content elsewhere

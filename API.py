@@ -39,10 +39,11 @@ st.success('https://beta.openai.com/docs/models/overview')
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 ###########################################################################################################################
 image=st.file_uploader("Choose a file_csv")
-prompt=st.image(image,output_format='PNG')
-a=prompt
+#prompt=st.image(image,output_format='PNG')
+bytes_data = image.read()
+#a=prompt
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(prompt=a, n=1, size="256x256")
+response = openai.Image.create_variation(prompt=bytes_data, n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

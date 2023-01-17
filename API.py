@@ -43,7 +43,7 @@ image=st.file_uploader("Choose a file_csv")
 bytes_data = image.read()  # read the content of the file in binary
 a=image.name
 #st.write(files.name)#, bytes_data)
-with open(os.path.join("/tmp", files.name), "wb") as f:
+with open(os.path.join("/tmp", image.name), "wb") as f:
     f.write(bytes_data)  # write this content elsewhere
 with open(os.path.join("/tmp",a),"rb") as r:
     #st.audio(r, format='audio/wav')

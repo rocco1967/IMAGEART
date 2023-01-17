@@ -42,7 +42,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 #prompt=st.image(image,output_format='PNG')
 
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(prompt=st.fileuploader('chose a file), n=1, size="256x256")
+response = openai.Image.create_variation(prompt=st.file_uploader('chose a file'), n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

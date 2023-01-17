@@ -5,7 +5,7 @@ import os
 import numpy as np
 from PIL import Image
 
-st.subheader('I am an advanced neural network specialized in responding IMAGE-ART')
+st.subheader('I am an advanced neural network specialized in built IMAGE-ART')
 
 st.subheader('To keep the service active make a small donation with PayPal.. Thank you')
 st.success('gianfranco.fa@gmail.com')
@@ -38,12 +38,13 @@ st.success('https://beta.openai.com/docs/models/overview')
 
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 ###########################################################################################################################
+st.file_uploader("Choose a file_csv")
+openai.api_key=st.secrets['OPEN_APY_KEY']
+response = openai.Image.create_variation(prompt=image, n=1, size="256x256")
 
-#response = openai.Image.create_variation(
-  image=open("Cattura.PNG", "rb"),
-  n=1,
-  size="256x256"
-)
+#image=open("Cattura.PNG", "rb")
+
+ 
 image_url = response['data'][0]['url']
 #for image_url in image_url:
     #st.write(image_url)

@@ -39,17 +39,17 @@ st.success('https://beta.openai.com/docs/models/overview')
 #st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
 ###########################################################################################################################
 #image=st.file_uploader("Choose a file_csv")
-image_file = st.file_uploader("Upload an image file", type=["png"])
-with open(image_file, mode="r", encoding="utf-8") as json_file:
-    saved_response = json.load(json_file)
-    image_data = b64decode(saved_response["data"][0]["b64_json"])
+#image_file = st.file_uploader("Upload an image file", type=["png"])
+#with open(image_file, mode="r", encoding="utf-8") as json_file:
+    #saved_response = json.load(json_file)
+    #image_data = b64decode(saved_response["data"][0]["b64_json"])
 
 #if image_file is not None:
     #image_file = Image.open(image_file)
 #prompt=st.image(image,output_format='PNG')
-
+image=Image.open('cattura.png')
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(image=image_data, n=1, size="256x256")
+response = openai.Image.create_variation(image=image, n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

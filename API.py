@@ -40,10 +40,14 @@ st.success('https://beta.openai.com/docs/models/overview')
 ###########################################################################################################################
 image=st.file_uploader("Choose a file_csv")
 #prompt=st.image(image,output_format='PNG')
-
-bytes_data = image.read()
-a=image.name
-#a=prompt
+bytes_data = image.read()  # read the content of the file in binary
+a=files.name
+#st.write(files.name)#, bytes_data)
+with open(os.path.join("/tmp", files.name), "wb") as f:
+    f.write(bytes_data)  # write this content elsewhere
+with open(os.path.join("/tmp",a),"rb") as r:
+    #st.audio(r, format='audio/wav')
+    r.read(r)
 openai.api_key=st.secrets['OPEN_APY_KEY']
 response = openai.Image.create_variation(prompt=a, n=1, size="256x256")
 

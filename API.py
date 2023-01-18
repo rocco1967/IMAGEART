@@ -55,7 +55,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
 #response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
-image=st.file_uploader('UPLOAD FILE')
+image=st.file_uploader('UPLOAD FILE',type=['png','PNG'])
 if image is not None:
     image=image
 else:

@@ -24,8 +24,9 @@ if selectbox == 'INSERT_TEXT':
         response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
         image_url = response['data'][0]['url']
         st.write(image_url) 
-else:
-     st.warning('INSERT TEXT')
+    else:
+        st.warning('INSERT TEXT')
+        st.stop()
 if selectbox == 'IMAGE_PNG':
     image=st.file_uploader('UPLOAD FILE',type=['png'])
     response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else

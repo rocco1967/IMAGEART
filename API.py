@@ -53,7 +53,7 @@ im_file=Image.open('Cattura.PNG')
 #st.image(im_file)    
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256',temperature=0.9)#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
+response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

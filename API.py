@@ -50,7 +50,7 @@ st.success('https://beta.openai.com/docs/models/overview')
     #image_file = Image.open(image_file)
 #prompt=st.image(image,output_format='PNG')
 im_file=st.file_uploader('carica il file')
-im_file=BytesIO()
+im_file=BytesIO(im_file)
 #st.image(im_file)    
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']

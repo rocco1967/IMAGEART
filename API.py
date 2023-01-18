@@ -18,7 +18,11 @@ st.success('https://beta.openai.com/docs/models/overview')
 selectbox = st.selectbox(
     "what do you want to process ? IMAGE_ART or IMAGE_VARIATION",
     ("INSERT_TEXT", "IMAGE_PNG"))
-
+if selectbox == 'INSERT_TEXT':
+    #st.text_area('INSERT TEXT')
+    response=openai.Image.create(prompt=st.text_area('INSERT TEXT),n=1,size=1024x1024)
+    image_url = response['data'][0]['url']
+    st.write(image_url)                                                
 
 
 openai.api_key=st.secrets['OPEN_APY_KEY']

@@ -53,7 +53,7 @@ image=Image.open('Cattura.PNG')
 st.image(image)
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(image=image1, n=1, size="256x256")
+response = openai.Image.create_variation(image=image, n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

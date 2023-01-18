@@ -24,9 +24,9 @@ if selectbox == 'INSERT_TEXT':
         prompt=prompt
     else:
         st.stop()
-    response = openai.Image.create(prompt='prompt',n=1,size='1024x1024')
-#if st.button('RUN'):
-    message =(response.choices[0].text)#
+    response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
+    #if st.button('RUN'):
+    message =response['data'][0]['url']
     st.write(message)
     
             

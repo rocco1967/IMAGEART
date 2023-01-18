@@ -22,11 +22,12 @@ if selectbox == 'INSERT_TEXT':
     prompt=st.text_area('INSERT TEXT')
     if prompt is not None:
         response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
-        image_url = response['data'][0]['url']
-        st.write(image_url) 
-    if prompt is None:
-        #st.warning('INSERT TEXT')
-        st.stop()
+        #image_url = response['data'][0]['url']
+        #st.write(image_url) 
+        if st.button('RUN'):
+            image_url = response['data'][0]['url']
+            st.write(image_url) 
+            
 if selectbox == 'IMAGE_PNG':
     image=st.file_uploader('UPLOAD FILE',type=['png'])
     response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else

@@ -49,8 +49,8 @@ st.success('https://beta.openai.com/docs/models/overview')
 #if image_file is not None:
     #image_file = Image.open(image_file)
 #prompt=st.image(image,output_format='PNG')
-#image=Image.open('Cattura.PNG')
-image1=st.image('Cattura.PNG')
+image=Image.open('Cattura.PNG')
+st.image(image)
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
 response = openai.Image.create_variation(image=image1, n=1, size="256x256")

@@ -61,7 +61,7 @@ if image is not None:
 else:
     st.stop()
 
-response = openai.Image.create_variation(image=image,n=1,size='1024x1024',temperature=0.9)#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
+response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
 
 
 #response = openai.Image.create_variation(image=,n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")

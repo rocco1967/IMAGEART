@@ -25,7 +25,7 @@ if selectbox == 'INSERT_TEXT':
        if st.button('RUN'):
           message =response['data'][0]['url']
           st.write(message)
-     except openai.error.OpenAIError as e:
+    except openai.error.OpenAIError as e:
           st.write(e.http_status)
           st.write(e.error)       
     

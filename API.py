@@ -51,6 +51,7 @@ st.success('https://beta.openai.com/docs/models/overview')
 #prompt=st.image(image,output_format='PNG')
 with open("Cattura.PNG", "rb") as f:
     im_b64 = base64.b64encode(f.read())
+st.image(im_b64)    
 #image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
 response = openai.Image.create_variation(image=im_b64, n=1, size="256x256")

@@ -14,7 +14,7 @@ st.success('gianfranco.fa@gmail.com')
 
 st.subheader('For use and explanation models read this:')
 st.success('https://beta.openai.com/docs/models/overview')
-
+openai.api_key=st.secrets['OPEN_APY_KEY']
 selectbox = st.selectbox(
     "what do you want to process ? IMAGE_ART or IMAGE_VARIATION",
     ("INSERT_TEXT", "IMAGE_PNG"))

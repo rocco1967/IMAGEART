@@ -25,7 +25,7 @@ if selectbox == 'INSERT_TEXT':
         image_url = response['data'][0]['url']
         st.write(image_url) 
     else:
-        st.warning('INSERT TEXT')
+        #st.warning('INSERT TEXT')
         st.stop()
 if selectbox == 'IMAGE_PNG':
     image=st.file_uploader('UPLOAD FILE',type=['png'])

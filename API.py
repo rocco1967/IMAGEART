@@ -33,6 +33,10 @@ if selectbox == 'INSERT_TEXT':
             
 if selectbox == 'IMAGE_PNG':
     image=st.file_uploader('UPLOAD FILE',type=['png'])
+    if image is not None:
+        image=image
+    else:
+        st.stop()
     response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
     image_url = response['data'][0]['url']
     st.write(image_url)

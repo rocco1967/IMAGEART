@@ -20,7 +20,7 @@ selectbox = st.selectbox(
     ("INSERT_TEXT", "IMAGE_PNG"))
 if selectbox == 'INSERT_TEXT':
     #st.text_area('INSERT TEXT')
-    response=openai.Image.create(prompt=(st.text_area('INSERT TEXT)),n=1,size=1024x1024)
+    response=openai.Image.create(prompt=st.text_area('INSERT TEXT'),n=1,size=1024x1024)
     image_url = response['data'][0]['url']
     st.write(image_url)                                                
 

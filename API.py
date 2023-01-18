@@ -17,31 +17,33 @@ st.success('https://beta.openai.com/docs/models/overview')
 openai.api_key=st.secrets['OPEN_APY_KEY']
 selectbox = st.selectbox(
     "what do you want to process ? IMAGE_ART or IMAGE_VARIATION",
-    ("INSERT_TEXT", "IMAGE_PNG"))
+    ("NONE","INSERT_TEXT", "IMAGE_PNG"))
 if selectbox == 'INSERT_TEXT':
     prompt=st.text_area('INSERT TEXT')
-    response=openai.Image.create(prompt=prompt,n=1,size='1024x1024')
+    response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
     image_url = response['data'][0]['url']
     st.write(image_url)                                                
-
-
-openai.api_key=st.secrets['OPEN_APY_KEY']
+if selectbox == 'IMAGE_PNG':
+    image=st.file_uploader('UPLOAD FILE',type=['png'])
+    response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
+    image_url = response['data'][0]['url']
+    st.write(image_url)
+###############################################################################################################################################################
+#openai.api_key=st.secrets['OPEN_APY_KEY']##
 #response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
-image=st.file_uploader('UPLOAD FILE',type=['png'])
-if image is not None:
-    image=image
-else:
-    st.warning('UPLOAD FILE PLEASE')
-    st.stop()
+#image=st.file_uploader('UPLOAD FILE',type=['png'])##
+#if image is not None:  ##
+    #image=image ##
+#else:  ##
+    #st.warning('UPLOAD FILE PLEASE')  ###
+    #st.stop()  ###
 
-response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
+#response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else  ###
 
 
 #response = openai.Image.create_variation(image=,n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
 #image=open("Cattura.PNG", "rb")
 
  
-image_url = response['data'][0]['url']
-#for image_url in image_url:
-    #st.write(image_url)
-st.write(image_url)
+#image_url = response['data'][0]['url']   ###
+#st.write(image_url)  ###

@@ -20,15 +20,14 @@ selectbox = st.selectbox(
     ("NONE","INSERT_TEXT", "IMAGE_PNG"))
 if selectbox == 'INSERT_TEXT':
     prompt=st.text_area('INSERT TEXT')
-    if prompt is None:
-        st.stop()
-        #prompt=prompt
-    else:
-        #st.stop()
-        response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
-        if st.button('RUN'):
-            message =response['data'][0]['url']
-            st.write(message)
+    try:        
+       response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
+       if st.button('RUN'):
+          message =response['data'][0]['url']
+          st.write(message)
+     except openai.error.OpenAIError as e:
+       st.write(e.http_status)
+       st.write(e.error)       
     
             
 if selectbox == 'IMAGE_PNG':

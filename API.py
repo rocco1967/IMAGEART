@@ -14,45 +14,13 @@ st.success('gianfranco.fa@gmail.com')
 
 st.subheader('For use and explanation models read this:')
 st.success('https://beta.openai.com/docs/models/overview')
-#st.subheader('text-davinci-003.......IS THE ENGINE OF CHATGPT')
+
+selectbox = st.selectbox(
+    "what do you want to process ? IMAGE_ART or IMAGE_VARIATION",
+    ("INSERT_TEXT", "IMAGE_PNG"))
 
 
 
-
-
-#openai.api_key=st.secrets['OPEN_APY_KEY']
-#####################################################################################################
-
-    
-#prompt =st.text_area('YOUR REQUEST:','''None''')
-#if prompt=='None' :
-  #st.warning('YOUR REQUEST PLEASE')
-  #st.stop()
-#st.success('Thank your request ')
-#openai.api_key=st.secrets['OPEN_APY_KEY']
-
-#response = openai.Image.create(prompt=prompt,n=1,
-         #size="256x256")#top_p=1
-#url='gianfranco.fa@gmail.com'
-#if st.button('RUN'):
-    #image_url = response['data'][0]['url']
-    #st.write(image_url)
-
-#st.download_button('download the result on your PC.. After first sloping Run....',(completions.choices[0].text))
-###########################################################################################################################
-#image=st.file_uploader("Choose a file_csv")
-#image_file = st.file_uploader("Upload an image file", type=["png"])
-#with open(image_file, mode="r", encoding="utf-8") as json_file:
-    #saved_response = json.load(json_file)
-    #image_data = b64decode(saved_response["data"][0]["b64_json"])
-
-#if image_file is not None:
-    #image_file = Image.open(image_file)
-#prompt=st.image(image,output_format='PNG')
-#a=st.file_uploader('carica il file')
-#im_file2=base64.b64encode(a)
-#st.image(im_file)    
-#image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
 #response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")
 image=st.file_uploader('UPLOAD FILE',type=['png'])

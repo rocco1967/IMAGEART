@@ -19,8 +19,8 @@ selectbox = st.selectbox(
     "what do you want to process ? IMAGE_ART or IMAGE_VARIATION",
     ("NONE","INSERT_TEXT", "IMAGE_PNG"))
 if selectbox == 'INSERT_TEXT':
-    prompt=st.text_area('INSERT TEXT')
-    response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
+    a=st.text_area('INSERT TEXT')
+    response = openai.Image.create(prompt=a,n=1,size='1024x1024')
 if st.button('RUN'):
    message =(response.choices[0].text)#
    st.write(message)

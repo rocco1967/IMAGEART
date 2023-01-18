@@ -59,7 +59,7 @@ image=st.file_uploader('carica il file')
 if image is not None:
     image=image
 else:
-    st.write('upload file')
+    st.stop()
 
 response = openai.Image.create_variation(image=image,n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
 

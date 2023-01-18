@@ -4,6 +4,8 @@ import streamlit as st
 import os
 import numpy as np
 from PIL import Image
+import base64
+from io import BytesIO
 
 st.subheader('I am an advanced neural network specialized in built IMAGE-ART')
 
@@ -48,9 +50,10 @@ st.success('https://beta.openai.com/docs/models/overview')
     #image_file = Image.open(image_file)
 #prompt=st.image(image,output_format='PNG')
 #image=Image.open('Cattura.PNG')
-#image=st.image('Cattura.PNG')
+image1=st.image('Cattura.PNG')
+image2=
 openai.api_key=st.secrets['OPEN_APY_KEY']
-response = openai.Image.create_variation(image=(Image.open('Cattura.PNG')), n=1, size="256x256")
+response = openai.Image.create_variation(image=, n=1, size="256x256")
 
 #image=open("Cattura.PNG", "rb")
 

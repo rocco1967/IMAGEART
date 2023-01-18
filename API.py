@@ -26,12 +26,12 @@ if selectbox == 'INSERT_TEXT':
           message =response['data'][0]['url']
           st.write(message)
     except openai.error.OpenAIError as e:
-          st.write(e.http_status)
-          st.write(e.error)       
+          #st.write(e.http_status)
+          #st.write(e.error)       
     
             
 if selectbox == 'IMAGE_PNG':
-    image=st.file_uploader('UPLOAD FILE',type=['png'])
+    image=st.file_uploader('UPLOAD FILE MAX 4 MB SQUARE FORMAT',type=['png'])
     if image is not None:
         image=image
     else:

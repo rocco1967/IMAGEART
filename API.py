@@ -22,8 +22,9 @@ if selectbox == 'INSERT_TEXT':
     prompt=st.text_area('INSERT TEXT')
     openai.api_key=st.secrets['OPEN_APY_KEY']
     try:        
-       response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
+       #response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
        if st.button('RUN'):
+          response = openai.Image.create(prompt=prompt,n=1,size='1024x1024')
           message =response['data'][0]['url']
           st.write(message)
     except openai.error.OpenAIError as e:

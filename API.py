@@ -38,9 +38,10 @@ if selectbox == 'IMAGE_PNG':
         image=image
     else:
         st.stop()
-    response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
-    image_url = response['data'][0]['url']
-    st.write(image_url)
+    if st.button('RUN'):    
+       response = openai.Image.create_variation(image=image,n=1,size='1024x1024')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
+       image_url = response['data'][0]['url']
+       st.write(image_url)
 ###############################################################################################################################################################
 #openai.api_key=st.secrets['OPEN_APY_KEY']##
 #response = openai.Image.create_variation(image=st.file_uploader('carica il file'),n=1,size='256x256')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")

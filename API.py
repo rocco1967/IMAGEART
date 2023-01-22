@@ -28,8 +28,9 @@ if selectbox == 'INSERT_TEXT':
        if st.button('RUN'):
           response = openai.Image.create(prompt=prompt,n=1,size='512x512')
           message =response['data'][0]['url']
-          response = requests.get(message)
-          Image.open(BytesIO(response.content))  
+          #response = requests.get(message)
+          #Image.open(BytesIO(response.content))
+          st.image(message)  
           st.write(message)
     except openai.error.OpenAIError as e:
           st.write('INSERISCI TESTO')#(e.http_status)

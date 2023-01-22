@@ -6,6 +6,8 @@ import numpy as np
 from PIL import Image
 import base64
 from io import BytesIO
+import requests
+
 
 st.subheader('I am an advanced neural network specialized in built IMAGE-ART')
 

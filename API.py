@@ -44,7 +44,7 @@ if selectbox == 'IMAGE_PNG':
     else:
         st.stop()
     if st.button('RUN'):    
-       response = openai.Image.create_variation(image=image,n=1,size='512x512')#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
+       response = openai.Image.create_variation(image=image,n=1,size='512x512',temperature=0.5)#(image=open('Cattura.PNG','rb'), n=1, size="256x256")else
        image_url = response['data'][0]['url']
        st.image(image_url)  
        st.write(image_url)
